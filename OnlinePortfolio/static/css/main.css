@@ -1,8 +1,7 @@
-
 .thebody {
   background-color: #111111;
   font-family: 'Montserrat';
-  
+
 }
 
 .bgk-cardcolor{
@@ -10,8 +9,8 @@
   background-color: #292929;
   margin: 50px 50px 55px 50px; 
   border-radius: 25px
+  
 }
-
 
 
 .profile-text h1{
@@ -119,11 +118,12 @@ body {
 .about-me .section-title h2 {
   font-size: 32px;
   margin-bottom: 20px;
+  color: white;
 }
 
 .about-me .section-title p {
   font-size: 18px;
-  color: #666;
+  color: white;
 }
 
 .about-me .description {
@@ -154,56 +154,17 @@ body {
   line-height: 1.6;
 }
 
-/* Interests Section */
-
-.interests {
-  margin-bottom: 50px;
-}
-
-.interests .section-title h2 {
-  font-size: 32px;
-  margin-bottom: 20px;
-  color: white; /* Added */
-}
-
-.interests .row {
-  margin-top: 30px;
-}
-
-.interests .col-lg-3 {
-  margin-bottom: 30px;
-}
-
-.interests .icon-box {
-  text-align: center;
-  background-color: whitesmoke;
-  border-radius: 25px;
-  padding: 3px;
-
-}
-
-.interests .icon-box i {
-  font-size: 36px;
-  margin-bottom: 10px;
-  color: white; 
-}
-
-.interests .icon-box h3 {
-  font-size: 20px;
-  font-weight: bold;
-  color: black; 
-}
-
 
 /* SKill Section*/
 
-.bgk-cardcolor2{
-  background-color: #1e1e1f;
-  border: 2px;
+.bgk-cardcolor2 {
+  background-color: #292929;
+  border: 2px solid; /* Added 'solid' for border style */
   border-radius: 25px;
 }
+
 .skills {
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 
 .skills-title {
@@ -250,13 +211,162 @@ body {
   color: white;
 }
 
-.progress-bg {
-  width: 100%;
-  height: 10px;
-  background-color: #ddd;
+
+.content-skill {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 25px;
+  padding-right: 10px;
+  align-items: center;
 }
 
-.progress-fill {
+@media (max-width: 768px) {
+  .col-sm-2 {
+    flex: 0 0 calc(50% - 20px); /* Adjusted width to occupy 50% of the container */
+    max-width: calc(50% - 20px); /* Added max-width to prevent overflow */
+  }
+}
+
+.skill-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background-color: #333; /* Background color for the card */
+  border-radius: 5px;
+  margin: 5px;
+}
+
+.skill-logo {
+  color: white; /* Color of the logo */
+  margin-right: 10px;
+}
+
+.skill-name {
+  color: white; /* Color of the skill name */
+}
+
+
+/* resume */
+.resume-section {
+  padding: 35px 0;
+}
+
+.resume-background {
+  background-color: #ddd;
+  margin: 1px 50px;
+}
+
+.section-heading h2 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #333;
+}
+
+.section-heading p {
+  font-size: 18px;
+  color: black;
+}
+
+.resume-content {
+  margin-bottom: 30px;
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.resume-content h4 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.resume-content h5 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #555;
+}
+
+.resume-content p {
+  font-size: 16px;
+  color: #777;
+}
+
+.resume-content ul {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+.resume-content ul li {
+  font-size: 16px;
+  color: #777;
+}
+
+/* SER */
+
+.service-heading h2{
+  color: white;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.service-heading p{
+  font-size: 18px;
+  color: white;
+}
+
+
+.card-body-service {
+  text-align: center;
+  padding: 5px;
+}
+
+.btn-service {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-decoration: none;
+  background-color: #777;
+  color: white;
+}
+
+.btn-service:hover {
+  background-color: #f0f0f0;
+}
+
+
+/* project pagodddd nakoooo */
+
+/* Style the text to be white */
+.header-project h1,
+.header-project p{
+  color: white;
+}
+
+/* Make the last card bigger */
+.card:last-child {
+  height: 300px; /* Adjust the height as needed */
+}
+
+/* Ensure the card fills its parent container */
+.card-project {
   height: 100%;
-  background-color: blue;
+}
+
+/* Center the text vertically within the card */
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media (max-width: 992px) {
+  /* Adjust card height for responsiveness */
+  .card:last-child {
+    height: auto;
+  }
 }
