@@ -1,9 +1,5 @@
 
 <style>
-* {
-  box-sizing: border-box;
-  
-}
 
 .header-gallery {
   text-align: center;
@@ -11,17 +7,21 @@
   color: white;
 }
 
-.row {
-  display: -ms-flexbox; /* IE10 */
-  display: flex;
-  -ms-flex-wrap: wrap; /* IE10 */
-  flex-wrap: wrap;
-  padding: 0 4px;
+.header-gallery p{
+  margin: 0px 70px;
 }
 
-/* Create four equal columns that sits next to each other */
+.row-gallery {
+  display: flex;
+  -ms-flex-wrap: wrap; 
+  flex-wrap: wrap;
+  padding: 0 4px;
+  margin: 5px 100px
+}
+
+
 .column {
-  -ms-flex: 25%; /* IE10 */
+  -ms-flex: 25%; 
   flex: 25%;
   max-width: 25%;
   padding: 0 4px;
@@ -33,7 +33,7 @@
   width: 100%;
 }
 
-/* Responsive layout - makes a two column-layout instead of four columns */
+
 @media screen and (max-width: 800px) {
   .column {
     -ms-flex: 50%;
@@ -42,7 +42,7 @@
   }
 }
 
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+
 @media screen and (max-width: 600px) {
   .column {
     -ms-flex: 100%;
@@ -51,46 +51,50 @@
   }
 }
 
-
-
 </style>
+
 <body>
 
 <!-- Header -->
-<div class="header-gallery">
-  <h1>Responsive Image Grid</h1>
-  <p>Resize the browser window to see the responsive effect.</p>
-</div>
+<section id="gallery">
+  <div class="header-gallery">
+  <h1>DIGITAL ART</h1>
+  <p>My digital art is a mix of school projects and my hobby. I use Canva, Photoshop, and other tools to create colorful and imaginative pieces. It's a fun blend of learning and creativity!.</p>
+  </div>
+</section>
+
 
 <!-- Photo Grid -->
-<div class="row"> 
+<div class="row-gallery"> 
   <div class="column">
-    <img src="media/cat.jpg" style="width:100%">
-    <img src="media/resume.jpg" style="width:100%">
-    <img src="media/contact.jpg" style="width:100%">
-    <img src="media/aboutme.jpg" style="width:100%">
-    <img src="media/services.jpg" style="width:100%">
+    <img src="media/works/ByahengPinoy.png" style="width:100%">
+    <img src="media/works/collage.jpg" style="width:100%">
+    <img src="media/works/logo.png" style="width:100%">
+    <img src="media/works/EXAM.png" style="width:100%">
+    <img src="media/works/DTart1.jpg" style="width:100%">
     
   </div>
   <div class="column">
-    <img src="media/cat.jpg" style="width:100%">
-    <img src="media/resume.jpg" style="width:100%">
-    <img src="media/about-bck1.jpg" style="width:100%">
-    <img src="media/aboutme.jpg" style="width:100%">
+    <img src="media/works/DTart2.jpg" style="width:100%">
+    <img src="media/works/skynet.jpg" style="width:100%">
+    <img src="media/works/fade.jpg" style="width:100%">
+    <img src="media/works/Justart.jpg" style="width:100%">
   </div>  
   <div class="column">
-    <img src="media/cat.jpg" style="width:100%">
-    <img src="media/resume.jpg" style="width:100%">
-    <img src="media/contact.jpg" style="width:100%">
-    <img src="media/aboutme.jpg" style="width:100%">
-    <img src="media/services.jpg" style="width:100%">
+    <img src="media/works/Luzviminda.jpg" style="width:100%">
+    <img src="media/works/rawr.png" style="width:100%">
+    <img src="media/works/Ricafort_Activity1.png" style="width:100%">
+    <img src="media/works/Ricafort,Luy_Sportposter.png" style="width:100%">
+    
+    
     
   </div>
   <div class="column">
-    <img src="media/cat.jpg" style="width:100%">
-    <img src="media/resume.jpg" style="width:100%">
-    <img src="media/about-bck1.jpg" style="width:100%">
-    <img src="media/aboutme.jpg" style="width:100%">
+    <img src="media/works/DTart3.jpg" style="width:100%">
+    <img src="media/works/RICAFORT, LESTER LEAND.png" style="width:100%">
+    <img src="media/works/RICAFORT_LOGO.png" style="width:100%">
+    <img src="media/works/Ricafort_1stPubmat Layout.png" style="width:100%">
+    
   </div>
 </div>
 
