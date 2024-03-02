@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-sm navbar-transparent  bg-transparent ">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="javascript:void(0)">Lester Portfolio</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="mynavbar">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'base:home' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'base:about' %}">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'base:resume' %}">Resume</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'base:contact' %}">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <div class="ml-auto">
+        <button type="button">Download CV</button>
+      </div>
+    </div>
+  </nav>
+  <style>
+    button {
+    background-color: transparent; /* Green */
+    color: white;
+    padding: 10px 20px; /* Add some padding */
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+  }
+
+    /* Change color on hover */
+    button:hover {
+      background-color: #45a049;
+  }
+
+  </style>
+  

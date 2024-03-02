@@ -1,43 +1,149 @@
-<section class="resume-section">
-  <div class="resume-background" id="resume">
-    <div class="container">
+{% load static %}
 
-        <div class="section-heading">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <link rel="stylesheet" href='{% static "css/main.css" %}'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href='https://icons.getbootstrap.com/icons' rel='stylesheet'>
+  </head>
+<body>
+  <div class="text-container1">
+    {% include "nav.html"%}
+
+    <section id="resume" class="resume">
+      <div class="container">
+  
+        <div class="section-title">
+          <h2>Resume</h2>
           <p>Academic Attainment and Employment Record</p>
         </div>
-
+  
         <div class="row">
-          <div class="col-md-6">
-            <h3 class="section-title">Education</h3>
-            <div class="resume-content">
+          <div class="col-lg-6">
+            <h3 class="resume-title">Sumary</h3>
+            <div class="resume-item">
+              <h4>Lester Leand A. Ricafort</h4>
+              <p><em>A soon to be fresh ligo sa umaga heheheh </em></p>
+              <p>
+              <ul>
+                <li>Boalan , Zamboanga City</li>
+                <li>+639776120397</li>
+                <li>lesterleand@gmail.com</li>
+              </ul>
+              </p>
+            </div>
+  
+            <h3 class="resume-title">Education</h3>
+            <div class="resume-item">
               <h4>Bachelor of Science in Information Technology</h4>
               <h5>2020 - 2024</h5>
               <p><em>Western Mindanao State University</em></p>
               <p>Qui deserunt veniam. Et sed aliquam labore tempore sed quisquam iusto autem sit. Ea vero voluptatum qui ut dignissimos deleniti nerada porti sand markend</p>
             </div>
-            <div class="resume-content">
+            <div class="resume-item">
               <h4>Science, Technology, Engineering, and Mathematics (STEM)</h4>
               <h5>2018 - 2020</h5>
               <p><em>Zamboanga Peninsula Polytechnic State University</em></p>
               <p>Quia nobis sequi est occaecati aut. Repudiandae et iusto quae reiciendis et quis Eius vel ratione eius unde vitae rerum voluptates asperiores voluptatem Earum molestiae consequatur neque etlon sader mart dila</p>
             </div>
           </div>
-          <div class="col-md-6">
-            <h3 class="section-title">Professional Experience</h3>
-            <div class="resume-content">
+
+          <div class="col-lg-6">
+            <h3 class="resume-title">Professional Experience</h3>
+            <div class="resume-item">
               <h4>Encoder / Secretary</h4>
-              <h5>2023 - Present</h5>
-              <p><em>GIM FOODs | | Part Time Job</em></p>
+              <h5>2023 - 2024</h5>
+              <p><em>GIM FOODs | | Part Time Job </em></p>
+              <p>
               <ul>
                 <li>Efficiently manage and organize receipts</li>
                 <li>Encode data with precision and confidentiality </li>
                 <li>Discreet handling of sensitive data</li>
                 <li>Exceptional organizational skills and Keen attention to detail</li>
               </ul>
+              </p>
             </div>
-            
+            <h3 class="resume-title">School Experience</h3>
+            <div class="resume-item">
+              <h4>Data Management / IT Support</h4>
+              <h5>2024 - Present</h5>
+              <p><em>DepEd | | OJT </em></p>
+              <p>
+              <ul>
+                <li>Char char kang eto </li>
+                <li>wala pa nag naka ojt eh </li>
+                <li>hayyyysss MOAAAAA</li>
+                <li>2am wording be like</li>
+              </ul>
+              </p>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="card-details">
+                  <div class="card-body">
+                    <h5 class="card-title">Art Gallery</h5>
+                    <p class="card-text">Mix things of School projects and Spare time as a hobby</p>
+                    <button class="general_btn" type="button" style="color: white;"><a href="{% url 'base:gallery' %}">Click Me</a></button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="card-details">
+                  <div class="card-body">
+                    <h5 class="card-title">School Projects</h5>
+                    <p class="card-text">Collective school projects with different roles i partake </p>
+                    <button class="general_btn" type="button" style="color: white;"><a href="{% url 'base:gallery' %}">Click Me</a></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br>
           </div>
+          
+          
+            
         </div>
-    </div>
+  
+      </div>
+    </section><!-- End Resume Section -->
+    
+    
   </div>
-</section>
+
+
+  <div class="gradient-bg">
+    <svg xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="goo">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo" />
+          <feBlend in="SourceGraphic" in2="goo" />
+        </filter>
+      </defs>
+    </svg>
+    <div class="gradients-container">
+      <div class="g1"></div>
+      <div class="g2"></div>
+      <div class="g3"></div>
+      <div class="g4"></div>
+      <div class="g5"></div>
+      <div class="interactive"></div>
+    </div>
+    
+  </div>
+    <script src='{% static "css/main.js" %}'></script>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>       
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.bundle.min.js"></script>
+    
+</body>
+</html>

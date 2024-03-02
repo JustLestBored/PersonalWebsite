@@ -1,100 +1,284 @@
-
+{% load static %}
 <style>
 
-.header-gallery {
-  text-align: center;
-  padding: 32px;
-  color: white;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
-.header-gallery p{
-  margin: 0px 70px;
-}
-
-.row-gallery {
+body {
   display: flex;
-  -ms-flex-wrap: wrap; 
+  align-items: center;
+  justify-content: center;
+  background-color: #43345d;
+  min-height: 800px;
+}
+
+.container {
+  position: relative;
+  width: 1100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
-  padding: 0 4px;
-  margin: 5px 100px
+  padding: 30px;  
 }
 
-
-.column {
-  -ms-flex: 25%; 
-  flex: 25%;
-  max-width: 25%;
-  padding: 0 4px;
+.header-gallery {
+    text-align: center;
+    padding: 32px;
+    color: white;
 }
 
-.column img {
-  margin-top: 8px;
-  vertical-align: middle;
-  width: 100%;
+.container .card {
+  position: relative;
+  max-width: 300px;
+  height: 215px;  
+  background-color: #fff;
+  margin: 30px 10px;
+  padding: 20px 15px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+  transition: 0.3s ease-in-out;
+  border-radius: 15px;
 }
 
-
-@media screen and (max-width: 800px) {
-  .column {
-    -ms-flex: 50%;
-    flex: 50%;
-    max-width: 50%;
-  }
+.container .card:hover {
+  height: 300px;    
 }
 
-
-@media screen and (max-width: 600px) {
-  .column {
-    -ms-flex: 100%;
-    flex: 100%;
-    max-width: 100%;
-  }
+.container .card .image {
+  position: relative;
+  width: 260px;
+  height: 200px;
+  top: -40%;
+  left: 8px;
+  z-index: 1;
 }
 
+.container .card .image img {
+  max-width: 60%;
+  border-radius: 15px;
+}
+
+.container .card .content {
+  position: relative;
+  top: -140px;
+  padding: 10px 15px;
+  color: #111;
+  text-align: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+}
+
+.container .card:hover .content {
+  margin-top: 30px;
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0.2s;
+}
+
+.content p{
+  color: black;
+}
+
+button {
+      background-color: transparent; /* Green */
+      color: white;
+      padding: 15px 30px; /* Add some padding */
+      text-align: center;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Change color on hover */
+    button:hover {
+      background-color: #45a049;
+    }
 </style>
 
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <link rel="stylesheet" href='{% static "css/main.css" %}'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href='https://icons.getbootstrap.com/icons' rel='stylesheet'>
+  </head>
 <body>
+  <div class="text-container1">
+    <!-- Header -->
+    <section id="gallery">
+      <button onclick="goBack()">Go Back</button>
+      <div class="header-gallery">
+          <h1>DIGITAL ART</h1>
+          <p>My digital art is a mix of school projects and my hobby. I use Canva, Photoshop, and other tools to create colorful and imaginative pieces. It's a fun blend of learning and creativity!.</p>
+      </div>
+    </section>
 
-<!-- Header -->
-<section id="gallery">
-  <div class="header-gallery">
-  <h1>DIGITAL ART</h1>
-  <p>My digital art is a mix of school projects and my hobby. I use Canva, Photoshop, and other tools to create colorful and imaginative pieces. It's a fun blend of learning and creativity!.</p>
+    <script>
+      function goBack() {
+        window.history.back();
+      }
+    </script>
+    
+    <!-- Photo Grid -->
+    <div class="container">
+      <div class="card">
+        <div class="image">
+          <img src="media/works/ByahengPinoy.png" alt="Placeholder image">
+        </div>
+        <div class="content">
+          <h3>This is content</h3>
+          <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual </p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="image">
+          <img src="media/works/collage.jpg" alt="Placeholder image">
+        </div>
+        <div class="content">
+          <h3>This is content</h3>
+          <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual </p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="image">
+          <img src="media/works/logo.png" alt="Placeholder image">
+        </div>
+        <div class="content">
+          <h3>This is content</h3>
+          <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual </p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="image">
+          <img src="media/works/EXAM.png" alt="Placeholder image">
+        </div>
+        <div class="content">
+          <h3>This is content</h3>
+          <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual </p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="image">
+          <img src="media/works/DTart1.jpg" alt="Placeholder image">
+        </div>
+        <div class="content">
+          <h3>This is content</h3>
+          <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual </p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="image">
+          <img src="media/works/DTart2.jpg" alt="Placeholder image">
+        </div>
+        <div class="content">
+          <h3>This is content</h3>
+          <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual </p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="image">
+          <img src="media/works/skynet.jpg" alt="Placeholder image">
+        </div>
+        <div class="content">
+          <h3>This is content</h3>
+          <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual </p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="image">
+          <img src="media/works/fade.jpg" alt="Placeholder image">
+        </div>
+        <div class="content">
+          <h3>This is content</h3>
+          <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual </p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="image">
+          <img src="media/works/Justart.jpg" alt="Placeholder image">
+        </div>
+        <div class="content">
+          <h3>This is content</h3>
+          <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual </p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="image">
+          <img src="media/works/Justart.jpg" alt="Placeholder image">
+        </div>
+        <div class="content">
+          <h3>This is content</h3>
+          <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual </p>
+        </div>
+      </div> 
+      <div class="card">
+        <div class="image">
+          <img src="media/works/Justart.jpg" alt="Placeholder image">
+        </div>
+        <div class="content">
+          <h3>This is content</h3>
+          <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual </p>
+        </div>
+      </div> 
+      <div class="card">
+        <div class="image">
+          <img src="media/works/Justart.jpg" alt="Placeholder image">
+        </div>
+        <div class="content">
+          <h3>This is content</h3>
+          <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual </p>
+        </div>
+      </div>     
+    </div>
+  
+
   </div>
-</section>
 
 
-<!-- Photo Grid -->
-<div class="row-gallery"> 
-  <div class="column">
-    <img src="media/works/ByahengPinoy.png" style="width:100%">
-    <img src="media/works/collage.jpg" style="width:100%">
-    <img src="media/works/logo.png" style="width:100%">
-    <img src="media/works/EXAM.png" style="width:100%">
-    <img src="media/works/DTart1.jpg" style="width:100%">
+  <div class="gradient-bg">
+    <svg xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="goo">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo" />
+          <feBlend in="SourceGraphic" in2="goo" />
+        </filter>
+      </defs>
+    </svg>
+    <div class="gradients-container">
+      <div class="g1"></div>
+      <div class="g2"></div>
+      <div class="g3"></div>
+      <div class="g4"></div>
+      <div class="g5"></div>
+      <div class="interactive"></div>
+    </div>
     
   </div>
-  <div class="column">
-    <img src="media/works/DTart2.jpg" style="width:100%">
-    <img src="media/works/skynet.jpg" style="width:100%">
-    <img src="media/works/fade.jpg" style="width:100%">
-    <img src="media/works/Justart.jpg" style="width:100%">
-  </div>  
-  <div class="column">
-    <img src="media/works/Luzviminda.jpg" style="width:100%">
-    <img src="media/works/rawr.png" style="width:100%">
-    <img src="media/works/Ricafort_Activity1.png" style="width:100%">
-    <img src="media/works/Ricafort,Luy_Sportposter.png" style="width:100%">
+    <script src='{% static "css/main.js" %}'></script>
     
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>       
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.bundle.min.js"></script>
     
-    
-  </div>
-  <div class="column">
-    <img src="media/works/DTart3.jpg" style="width:100%">
-    <img src="media/works/RICAFORT, LESTER LEAND.png" style="width:100%">
-    <img src="media/works/RICAFORT_LOGO.png" style="width:100%">
-    <img src="media/works/Ricafort_1stPubmat Layout.png" style="width:100%">
-    
-  </div>
-</div>
+</body>
+</html>
+
+
 
