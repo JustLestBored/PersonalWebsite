@@ -182,7 +182,7 @@ height: 100vh;
 display: flex;
 align-items: center;
 z-index: 1000;
-overflow-y: auto;
+
 }
 
 #header h1 {
@@ -289,6 +289,55 @@ margin: 0;
 }
 
 
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+/**
+* Desktop Navigation 
+*/
+.navbar {
+  padding: 0;
+  margin-top: 35px;
+  }
+  
+  .navbar ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  align-items: center;
+  }
+  
+  .navbar li {
+  position: relative;
+  }
+  
+  .navbar li+li {
+  margin-left: 30px;
+  }
+  
+  .navbar a,
+  .navbar a:focus {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+  white-space: nowrap;
+  }
+  
+  .navbar a i,
+  .navbar a:focus i {
+  font-size: 12px;
+  line-height: 0;
+  margin-left: 5px;
+  }
+  
+  
+
 .sidebar {
 position: fixed; /* Fix position to the viewport */
 top: 50%; /* Place the sidebar at the vertical center of the screen */
@@ -304,7 +353,7 @@ overflow-y: auto; /* Enable vertical scrolling if content exceeds height */
 
 /* Additional styles for main content */
 .col {
-padding-left: 270px; /* Add padding to the right of sidebar */
+padding-left: 70px; /* Add padding to the right of sidebar */
 }
 
 /* Example styling for description paragraphs */

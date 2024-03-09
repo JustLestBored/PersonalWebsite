@@ -9,4 +9,5 @@ urlpatterns = [
     path ('Contact', views.contact, name='contact'),
     path ('Gallery', views.gallery, name='gallery'),
     path ('Project', views.project, name='project'),
+    path ('Admin', views.admin, name='admin'),
 ]

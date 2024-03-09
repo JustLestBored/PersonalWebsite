@@ -19,3 +19,6 @@ def gallery(request):
 
 def project(request):
     return render(request,'project.html')
+
+def admin(request):
+    return render(request,'Admin/admin.html')

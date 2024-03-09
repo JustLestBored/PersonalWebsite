@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMS Admin Dashboard</title>
+    <link rel="stylesheet" href='{% static "css/admin.css" %}'>
+</head>
+<body>
+    <div id="sidebar">
+        <ul>
+            <h1>Dashboard</h1>
+            <li>Home Page</li>
+            <li>About User</li>
+            <li>Resume</li>
+        </ul>
+    </div>
+    <div id="content">
+        <h2>User Information</h2>
+        <form>
+            <input type="text" placeholder="Username">
+            <input type="text" placeholder="Email">
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <button id="logout">Log Out</button>
+</body>
+</html>
