@@ -70,6 +70,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'OnlinePortfolio.wsgi.application'
+AUTH_USER_MODEL = 'cms.User'
 
 
 # Database

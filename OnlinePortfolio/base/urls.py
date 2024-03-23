@@ -1,4 +1,5 @@
 from django.urls import path
+from cms.views import savedata
 from . import views
 app_name='base'
 
@@ -10,4 +11,6 @@ urlpatterns = [
     path ('Gallery', views.gallery, name='gallery'),
     path ('Project', views.project, name='project'),
     path ('Admin', views.admin, name='admin'),
+    path ('Admin/savedata', savedata, name='savedata'),
+
 ]

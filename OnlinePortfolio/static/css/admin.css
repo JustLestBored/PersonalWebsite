@@ -1,7 +1,22 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 100vh;
+}
+
+.box {
+    flex: 0 0 calc(50% - 20px); /* 50% width with gap */
+    background-color: #f0f0f0;
+    padding: 100px 100px;
+    margin: 10px;
+    text-align: center;
+}
+
+.modal-content {
+    width: 80%;
+    margin: auto;
 }
 
 #sidebar {
@@ -34,11 +49,7 @@ body {
     padding: 20px;
 }
 
-h2 {
-    color: #333;
-}
-
-input[type="text"] {
+.modal-body input[type="text"] {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
@@ -47,7 +58,7 @@ input[type="text"] {
     box-sizing: border-box;
 }
 
-input[type="submit"] {
+.modal-body input[type="submit"] {
     padding: 10px 20px;
     background-color: #333;
     color: #fff;
@@ -56,22 +67,51 @@ input[type="submit"] {
     cursor: pointer;
 }
 
-input[type="submit"]:hover {
+.modal-body input[type="submit"]:hover {
     background-color: #555;
 }
 
-#logout {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    padding: 10px 20px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
+/* Custom CSS for modal checkboxes */
+
+.social-media-checkboxes {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.social-media-checkboxes input[type="checkbox"] {
+    display: none; /* Hide default checkboxes */
+}
+
+.social-media-checkboxes label {
+    display: inline-block;
+    padding: 8px 12px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-#logout:hover {
-    background-color: #555;
+.social-media-checkboxes label:hover {
+    background-color: #f0f0f0;
+}
+
+.social-media-checkboxes input[type="checkbox"]:checked + label {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.social-media-checkboxes input[type="checkbox"]:checked + label::before {
+    content: "\2713";
+    font-size: 14px;
+    line-height: 14px;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 50%;
+    margin-right: 5px;
 }

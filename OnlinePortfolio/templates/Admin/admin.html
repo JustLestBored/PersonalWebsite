@@ -6,24 +6,248 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CMS Admin Dashboard</title>
     <link rel="stylesheet" href='{% static "css/admin.css" %}'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href='https://icons.getbootstrap.com/icons' rel='stylesheet'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <script src='{% static "css/main.js" %}'></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+
+
 </head>
 <body>
     <div id="sidebar">
         <ul>
             <h1>Dashboard</h1>
-            <li>Home Page</li>
-            <li>About User</li>
-            <li>Resume</li>
+            <li></li>
+            
         </ul>
     </div>
     <div id="content">
-        <h2>User Information</h2>
-        <form>
-            <input type="text" placeholder="Username">
-            <input type="text" placeholder="Email">
-            <input type="submit" value="Submit">
+        
+        <form action="{% url 'base:savedata' %}" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            
+            <div class="container">
+                <div class="box">
+                <h3>HomePage</h3>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal1">Edit HomePage Information</button>
+                </div>
+                <div class="box">
+                <h3>AboutMe</h3>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2">Edit AboutMe Information</button>
+                </div>
+                <div class="box">
+                <h3>Resume</h3>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal3">Edit Resume Information</button>
+                </div>
+                <div class="box">
+                <h3>Title 4</h3>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal4">Large modal</button>
+                </div>
+            </div>
+
+            <!-- Modals -->
+            <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel1">Home page Information</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="text" name="intro1" value="{{user.intro1}}" placeholder="1st Home page Summary"> 
+                        <input type="text" name="intro2" value="{{user.intro2}}" placeholder="2nd Home page Summaryy"> 
+                        <input type="text" name="name" placeholder="Whole Name"> 
+                        <input type="text" name="facebook" placeholder="Facebook link" >
+                        <input type="text" name="github" placeholder="Github link">
+                        <input type="text" name="discord" placeholder="Discord link">
+                        <input type="text" name="twitter" placeholder="twitter link">
+                        <input type="text" name="linkedin" placeholder="LinkedIn link"> 
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Delete All Data</button>
+                    <button type="submit" class="btn btn-secondary" data-dismiss="modal">Submit</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel2">About Me Information</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="text" name="phrase" placeholder="1 phrase about yourself"> 
+                        <input type="text" name="degree" placeholder="Degree"> 
+                        <input type="text" name="birthday" placeholder="Birthday"> 
+                        <input type="text" name="phone" placeholder="Phone"> 
+                        <input type="text" name="city" placeholder="City"> 
+                        <input type="text" name="age" placeholder="Age"> 
+                        <input type="text" name="email" placeholder="Email"> 
+                        <br>
+                        <h2>Skills</h2>
+                        <div class="social-media-checkboxes">
+                            
+                            <input type="checkbox" name="htmlCheckbox">
+                            <label for="htmlCheckbox">HTML</label>
+                            
+                            <input type="checkbox" name="cssCheckbox">
+                            <label for="cssCheckbox">CSS</label>
+                            
+                            <input type="checkbox" name="javascriptCheckbox">
+                            <label for="javascriptCheckbox">JavaScript</label>
+                            
+                            <input type="checkbox" name="reactCheckbox">
+                            <label for="reactCheckbox">React</label>
+                            
+                            <input type="checkbox" name="tailwindCheckbox">
+                            <label for="tailwindCheckbox">Tailwind CSS</label>
+                        </div>
+                        
+                        <div class="social-media-checkboxes">
+                            <input type="checkbox" name="pythonCheckbox">
+                            <label for="pythonCheckbox">Python</label>
+                            
+                            <input type="checkbox" name="javaCheckbox">
+                            <label for="javaCheckbox">Java</label>
+
+                            <input type="checkbox" name="MongoDBCheckbox">
+                            <label for="MongoDBCheckbox">MongoDB</label>
+                            
+                            <input type="checkbox" name="nodejsCheckbox">
+                            <label for="nodejsCheckbox">NodeJs</label>
+                            
+                            <input type="checkbox" name="flutterCheckbox">
+                            <label for="flutterCheckbox">Flutter</label>
+                            
+                            <input type="checkbox" name="kotlinCheckbox">
+                            <label for="kotlinCheckbox">Kotlin</label>
+                        </div>
+                        
+                        <h2>Service</h2>
+                        <div class="social-media-checkboxes">
+                            <input type="checkbox" name="troubleshootingCheckbox">
+                            <label for="troubleshootingCheckbox">Basic Troubleshooting</label>
+                            
+                            <input type="checkbox" name="webdevCheckbox">
+                            <label for="webdevCheckbox">Web Development</label>
+                            
+                            <input type="checkbox" name="networkCheckbox">
+                            <label for="networkCheckbox">Network security</label>
+                            
+                            <input type="checkbox" name="emailCheckbox">
+                            <label for="emailCheckbox">Email services</label>
+                        </div>
+                        
+    
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Delete All Data</button>
+                        <button type="submit" class="btn btn-secondary" data-dismiss="modal">Submit</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel3" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel3">Resume Information</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                        <h2>College</h2>
+                        <input type="text" name="school" placeholder="Name of School">
+                        <input type="text" name="gradyear" placeholder="Year Graduated">
+                        <input type="text" name="degreeInfo" placeholder="Degree Information">
+
+                        <h2>SHS</h2>
+                        <input type="text" name="school2" placeholder="Name of School">
+                        <input type="text" name="gradyear2" placeholder="Year Graduated">
+                        <input type="text" name="degreeInfo2" placeholder="Degree Information">
+
+                        <h2>Professional Experience</h2>
+                        <input type="text" name="jobtitle" placeholder="Job Title">
+                        <input type="text" name="jobyear" placeholder="Job Year">
+                        <input type="text" name="companyname" placeholder="Company Name">
+                        <input type="text" name="JobDescri1" placeholder="Job Description 1">
+                        <input type="text" name="JobDescri2" placeholder="Job Description 2">
+                        <input type="text" name="JobDescri3" placeholder="Job Description 3">
+                        <input type="text" name="JobDescri4" placeholder="Job Description 4">
+
+                        <h2>School Experience</h2>
+                        <input type="text" name="roletitle" placeholder="Job Title">
+                        <input type="text" name="roleyear" placeholder="Job Year">
+                        <input type="text" name="ojtcompanyname" placeholder="Company Name">
+                        <input type="text" name="roleDescri1" placeholder="Job Description 1">
+                        <input type="text" name="roleDescri2" placeholder="Job Description 2">
+                        <input type="text" name="roleDescri3" placeholder="Job Description 3">
+                        <input type="text" name="roleDescri4" placeholder="Job Description 4">
+                    </div>
+                    
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Delete All Data</button>
+                        <button type="submit" class="btn btn-secondary" data-dismiss="modal">Submit</button>
+                    </div>
+
+                    
+                </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="exampleModal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel4" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel4">Modal 4</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                    Content for Modal 4.
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-secondary" data-dismiss="modal">Save changes</button>
         </form>
+        
     </div>
+
+
+
+
+    
 
     <button id="logout">Log Out</button>
 </body>

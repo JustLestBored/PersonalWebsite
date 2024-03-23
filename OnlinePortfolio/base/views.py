@@ -1,10 +1,13 @@
 from django.shortcuts import render
+from cms.models import *
 
 # Create your views here.
 
 def home(request):
-    return render(request,'home.html')
-    
+    user = User.objects.get(id=1)
+    context = {'user':user}
+    return render(request,'home.html',context)
+
 def abouts(request):
     return render(request,'About.html')
     
@@ -21,4 +24,6 @@ def project(request):
     return render(request,'project.html')
 
 def admin(request):
-    return render(request,'Admin/admin.html')
+    user = User.objects.get(username='admin')
+    context = {'user':user}
+    return render(request,'Admin/admin.html',context)
