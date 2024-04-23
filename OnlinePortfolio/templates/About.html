@@ -25,20 +25,21 @@
           </div>
           <div class="row">
             <div class="col-lg-4">
-              <img src="media/me-colors.jpg" class="img-fluid" alt="">
+              <img src="{{user.picture.url}}" class="img-fluid" alt="">
             </div>
             <div class="col-lg-8">
-              <h3 >WELL-ROUNDED IT STUDENT</h3>
-              <p class="description">Excited to embark on a IT career in flexible roles, armed with a growing skill set in technology and a strong dedication to attention to detail. Motivated by my eagerness to execute tasks accurately and thrive on self-motivation. Constantly seeking ways to improve and adapt my communication skills to better serve the evolving needs of the field.</p>
+              <h3>{{user.phrase}}</h3>
+
+              <p class="description">{{user.description}}</p>
               <ul class="details">
-                <li><strong>Degree:</strong> <span>Bachelor of Science in Information Technology</span></li>
-                <li><strong>Birthday:</strong> <span>July 24, 2002</span></li>
-                <li><strong>Phone:</strong> <span>09776120397</span></li>
-                <li><strong>City:</strong> <span>Zamboanga City</span></li>
-                <li><strong>Age:</strong> <span>21</span></li>
-                <li><strong>Email:</strong> <span>lesterleand@example.com</span></li>
-                <li><strong>Github:</strong> <span>https://github.com/JustLestBored</span></li>
-                <li><strong>Discord:</strong> <span>@itsssagee</span></li>
+                <li><strong>Degree:</strong> <span>{{user.degree}}</span></li>
+                <li><strong>Birthday:</strong> <span>{{user.birthday}}</span></li>
+                <li><strong>Phone:</strong> <span>{{user.phone}}</span></li>
+                <li><strong>City:</strong> <span>{{user.city}}</span></li>
+                <li><strong>Age:</strong> <span>{{user.age}}</span></li>
+                <li><strong>Email:</strong> <span>{{user.email}}</span></li>
+                <li><strong>Github:</strong> <span>{{user.githubname}}</span></li>
+                
               </ul>
             </div>
           </div>
@@ -51,7 +52,8 @@
           <h3 class="skills-title">My Skills</h3>
           <div class="content-skill">
             <div class="row">
-              <div class="col-sm-2">
+              
+              <div class="col-sm-2 {% if not user.htmlcheckbox %}d-none{% endif %}" >
                 <div class="skill-card">
                   <box-icon color="white">
                     <i class='bx bxl-html5 bx-lg bx skill-logo'></i>
@@ -59,72 +61,73 @@
                   <span class="skill-name">HTML</span>
                 </div>
               </div>
-              <div class="col-sm-2">
+
+              <div class="col-sm-2 {% if not user.cssCheckbox %}d-none{% endif %}" >
                 <div class="skill-card">
                   <i class='bx bxl-css3 bx-lg skill-logo'></i>
                   <span class="skill-name">CSS</span>
                 </div>
               </div>
-              <div class="col-sm-2">
+              <div class="col-sm-2 {% if not user.javascriptCheckbox %}d-none{% endif %}" >
                 <div class="skill-card">
                   <i class='bx bxl-javascript bx-lg skill-logo'></i>
                   <span class="skill-name">JavaScript</span>
                 </div>
               </div>
-              <div class="col-sm-2">
+              <div class="col-sm-2 {% if not user.reactCheckbox %}d-none{% endif %} ">
                 <div class="skill-card">
                   <i class='bx bxl-react bx-lg skill-logo'></i>
                   <span class="skill-name">React</span>
                 </div>
               </div>
-              <div class="col-sm-2">
+              <div class="col-sm-2 {% if not user.tailwindCheckbox %}d-none{% endif %} ">
                 <div class="skill-card">
                   <i class='bx bxl-tailwind-css bx-lg skill-logo'></i>
                   <span class="skill-name">Tailwind CSS</span>
                 </div>
               </div>
-              <div class="col-sm-2">
+              <div class="col-sm-2 {% if not user.pythonCheckbox %}d-none{% endif %} ">
                 <div class="skill-card">
                   <i class='bx bxl-python bx-lg skill-logo'></i>
                   <span class="skill-name">Python</span>
                 </div>
               </div>
-              <div class="col-sm-2">
+              <div class="col-sm-2 {% if not user.javaCheckbox %}d-none{% endif %} ">
                 <div class="skill-card">
                   <i class='bx bxl-java bx-lg skill-logo'></i>
                   <span class="skill-name">Java</span>
                 </div>
               </div>
               
-              <div class="col-sm-2">
+              <div class="col-sm-2 {% if not user.MongoDBCheckbox %}d-none{% endif %} ">
                 <div class="skill-card">
                   <i class='bx bxl-mongodb bx-lg skill-logo'></i>
                   <span class="skill-name">MongoDB</span>
                 </div>
               </div>
               
-              <div class="col-sm-2">
+              <div class="col-sm-2 {% if not user.nodejsCheckbox %}d-none{% endif %} ">
                 <div class="skill-card">
                   <i class='bx bxl-nodejs bx-lg skill-logo'></i>
                   <span class="skill-name">NodeJS</span>
                 </div>
               </div>
               
-              <div class="col-sm-2">
+              <div class="col-sm-2 {% if not user.flutterCheckbox %}d-none{% endif %} ">
                 <div class="skill-card">
                   <i class='bx bxl-flutter bx-lg skill-logo'></i>
                   <span class="skill-name">Flutter</span>
                 </div>
               </div>
               
-              <div class="col-sm-2">
+              <div class="col-sm-2 {% if not user.javaCheckbox %}d-none{% endif %} ">
                 <div class="skill-card">
                   <i class='bx bxl-java bx-lg skill-logo'></i>
                   <span class="skill-name">Java</span>
                 </div>
               </div>
               
-              <div class="col-sm-2">
+              <div class="col-sm-2 {% if not user.kotlinCheckbox %}d-none{% endif %} ">
                 <div class="skill-card">
                   <i class='bx bxl-android bx-lg skill-logo'></i>
                   <span class="skill-name">Kotlin</span>
@@ -145,7 +148,7 @@
           </div>
             
           <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-6 {% if not user.troubleshootingCheckbox %}d-none{% endif %}">
               <div class="card-details">
                 <div class="card-body">
                   <h5 class="card-title">Basic Troubleshooting</h5>
@@ -154,7 +157,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-sm-6">
+            <div class="col-sm-6 {% if not user.webdevCheckbox %}d-none{% endif %}">
               <div class="card-details">
                 <div class="card-body">
                   <h5 class="card-title">Web Development</h5>
@@ -166,7 +169,7 @@
           </div>
           <br>
           <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-6 {% if not user.networkCheckbox %}d-none{% endif %}">
               <div class="card-details">
                 <div class="card-body">
                   <h5 class="card-title">Network security</h5>
@@ -175,7 +178,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-sm-6">
+            <div class="col-sm-6 {% if not user.emailCheckbox %}d-none{% endif %}">
               <div class="card-details">
                 <div class="card-body">
                   <h5 class="card-title">Email services</h5>

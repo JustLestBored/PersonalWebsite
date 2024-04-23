@@ -32,20 +32,16 @@
                                 <div class="contact-form-wrap w-100 p-md-5 p-4">
                                     <h3 class="form-heading mb-4" style="color: white;">Get in Touch</h3>
                                     
-                                    <form method="POST" id="contact-form" name="contact-form" class="contact-form">
+                                    <form method="POST" id="contact-form" name="contact-form" class="contact-form" action="{% url 'base:contact' %}">
+                                        {% csrf_token %}
                                         <div class="row" style="color: white;">
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label class="form-label" for="full-name">Full Name</label>
-                                                    <input type="text" class="form-control" name="full-name" id="full-name" placeholder="Your Full Name">
+                                                    <label class="form-label" for="email">Your Email Address</label>
+                                                    <input type="email" class="form-control" name="email_address" id="email" placeholder="Your Email Address">
                                                 </div>
                                             </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="form-label" for="email">Email Address</label>
-                                                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email Address">
-                                                </div>
-                                            </div>
+                                    
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label class="form-label" for="subject">Subject</label>
@@ -60,7 +56,7 @@
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <input type="submit" value="Send Message" class="btn btn-primary">
+                                                    <input type="submit" class="btn btn-primary">
                                                     <div class="submitting"></div>
                                                 </div>
                                             </div>

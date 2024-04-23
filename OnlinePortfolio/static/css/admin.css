@@ -26,6 +26,7 @@
     background-color: #333;
     padding-top: 20px;
     color: #fff;
+    text-align: center;
 }
 
 #sidebar ul {
@@ -71,47 +72,4 @@
     background-color: #555;
 }
 
-/* Custom CSS for modal checkboxes */
 
-.social-media-checkboxes {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.social-media-checkboxes input[type="checkbox"] {
-    display: none; /* Hide default checkboxes */
-}
-
-.social-media-checkboxes label {
-    display: inline-block;
-    padding: 8px 12px;
-    margin: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.social-media-checkboxes label:hover {
-    background-color: #f0f0f0;
-}
-
-.social-media-checkboxes input[type="checkbox"]:checked + label {
-    background-color: #007bff;
-    color: #fff;
-}
-
-.social-media-checkboxes input[type="checkbox"]:checked + label::before {
-    content: "\2713";
-    font-size: 14px;
-    line-height: 14px;
-    display: inline-block;
-    width: 14px;
-    height: 14px;
-    text-align: center;
-    vertical-align: middle;
-    background-color: #007bff;
-    color: #fff;
-    border-radius: 50%;
-    margin-right: 5px;
-}

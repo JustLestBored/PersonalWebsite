@@ -5,6 +5,7 @@ from django.contrib.auth.models import AbstractUser
 class User (AbstractUser):
     intro1 = models.TextField(null = True, blank = True)
     intro2 = models.TextField(null = True, blank = True)
+    picture = models.ImageField(upload_to='images/', null= True, blank=True)
 
     name = models.TextField( null = True, blank = True)
     facebook = models.TextField( null = True, blank = True)
@@ -14,12 +15,14 @@ class User (AbstractUser):
     twitter = models.TextField( null = True, blank = True)
 
     phrase = models.TextField( null = True, blank = True)
+    description = models.TextField( null = True, blank = True)
     degree = models.TextField( null = True, blank = True)
     birthday = models.TextField( null = True, blank = True)
     phone = models.TextField(max_length=11, null = True, blank = True)
     city = models.TextField( null = True, blank = True)
     age = models.TextField( null = True, blank = True)
     email = models.TextField( null = True, blank = True)
+    githubname = models.TextField( null = True, blank = True)
 
     htmlcheckbox = models.BooleanField(default=False)
     cssCheckbox = models.BooleanField(default=False)
@@ -38,12 +41,15 @@ class User (AbstractUser):
     networkCheckbox = models.BooleanField(default=False)
     emailCheckbox = models.BooleanField(default=False)
 
+    
     school = models.TextField( null = True, blank = True)
     gradyear = models.TextField( null = True, blank = True)
-    degreeInfo = models.TextField( null = True, blank = True)
+    degreeDesc = models.TextField( null = True, blank = True)
+   
+    degree2 = models.TextField( null = True, blank = True)
     school2 = models.TextField( null = True, blank = True)
     gradyear2 = models.TextField( null = True, blank = True)
-    degreeInfo2 = models.TextField( null = True, blank = True)
+    degreeDesc2 = models.TextField( null = True, blank = True)
 
     jobtitle = models.TextField( null = True, blank = True)
     jobyear = models.TextField( null = True, blank = True)
@@ -60,6 +66,7 @@ class User (AbstractUser):
     roleDescri2 = models.TextField( null = True, blank = True)
     roleDescri3 = models.TextField( null = True, blank = True)
     roleDescri4 = models.TextField( null = True, blank = True)
+
 
     def str(self):
         return self.email or str(self.id)

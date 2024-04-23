@@ -14,3 +14,4 @@ def savedata(request):
         else:
             print(form.errors)
             return redirect('base:admin')
+

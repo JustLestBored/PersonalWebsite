@@ -12,5 +12,7 @@ urlpatterns = [
     path ('Project', views.project, name='project'),
     path ('Admin', views.admin, name='admin'),
     path ('Admin/savedata', savedata, name='savedata'),
+    path ('login', views.login, name='login'),
+    path ('logout', views.logout, name='logout'),
 
 ]

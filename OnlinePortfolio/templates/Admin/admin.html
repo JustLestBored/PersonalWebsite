@@ -25,11 +25,13 @@
 
 
 </head>
+
 <body>
     <div id="sidebar">
         <ul>
             <h1>Dashboard</h1>
-            <li></li>
+            <a href="{% url 'base:logout' %}" type="log_out" class="btn btn-secondary" data-dismiss="modal">Log Out</a>
+            
             
         </ul>
     </div>
@@ -52,10 +54,7 @@
                 <h3>Resume</h3>
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal3">Edit Resume Information</button>
                 </div>
-                <div class="box">
-                <h3>Title 4</h3>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal4">Large modal</button>
-                </div>
+                
             </div>
 
             <!-- Modals -->
@@ -71,22 +70,22 @@
                     <div class="modal-body">
                         <input type="text" name="intro1" value="{{user.intro1}}" placeholder="1st Home page Summary"> 
                         <input type="text" name="intro2" value="{{user.intro2}}" placeholder="2nd Home page Summaryy"> 
-                        <input type="text" name="name" placeholder="Whole Name"> 
-                        <input type="text" name="facebook" placeholder="Facebook link" >
-                        <input type="text" name="github" placeholder="Github link">
-                        <input type="text" name="discord" placeholder="Discord link">
-                        <input type="text" name="twitter" placeholder="twitter link">
-                        <input type="text" name="linkedin" placeholder="LinkedIn link"> 
+                        <input type="text" name="name" value="{{user.name}}" placeholder="Whole Name"> 
+                        <input type="text" name="facebook" value="{{user.facebook}}"  placeholder="Facebook link" >
+                        <input type="text" name="github" value="{{user.github}}"  placeholder="Github link">
+                        <input type="text" name="discord" value="{{user.discord}}"  placeholder="Discord link">
+                        <input type="text" name="twitter" value="{{user.twitter}}"  placeholder="twitter link">
+                        <input type="text" name="linkedin" value="{{user.linkedin}}"  placeholder="LinkedIn link"> 
                     </div>
                     <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Delete All Data</button>
+                    
                     <button type="submit" class="btn btn-secondary" data-dismiss="modal">Submit</button>
                     </div>
                 </div>
                 </div>
             </div>
-
+            
             <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
                 <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
@@ -97,18 +96,25 @@
                     </button>
                     </div>
                     <div class="modal-body">
-                        <input type="text" name="phrase" placeholder="1 phrase about yourself"> 
-                        <input type="text" name="degree" placeholder="Degree"> 
-                        <input type="text" name="birthday" placeholder="Birthday"> 
-                        <input type="text" name="phone" placeholder="Phone"> 
-                        <input type="text" name="city" placeholder="City"> 
-                        <input type="text" name="age" placeholder="Age"> 
-                        <input type="text" name="email" placeholder="Email"> 
+                        <div class="mb-3">
+                            <label for="formFile" class="form-label">Default file input example</label>
+                            <input class="form-control" type="file" id="formFile" name="picture" >
+                        </div>
+                        <br>
+                        <input type="text" name="phrase" value="{{user.phrase}}"   placeholder="1 phrase about yourself"> 
+                        <input type="text" name="description" value="{{user.description}}"   placeholder="Description"> 
+                        <input type="text" name="degree" value="{{user.degree}}"   placeholder="Degree"> 
+                        <input type="text" name="birthday" value="{{user.birthday}}"   placeholder="Birthday"> 
+                        <input type="text" name="phone" value="{{user.phone}}"   placeholder="Phone"> 
+                        <input type="text" name="city" value="{{user.city}}"   placeholder="City"> 
+                        <input type="text" name="age" value="{{user.age}}"   placeholder="Age"> 
+                        <input type="text" name="email" value="{{user.email}}"   placeholder="Email">
+                        <input type="text" name="githubname" value="{{user.githubname}}"   placeholder="Discord"> 
                         <br>
                         <h2>Skills</h2>
+
                         <div class="social-media-checkboxes">
-                            
-                            <input type="checkbox" name="htmlCheckbox">
+                            <input type="checkbox" name="htmlcheckbox">
                             <label for="htmlCheckbox">HTML</label>
                             
                             <input type="checkbox" name="cssCheckbox">
@@ -163,13 +169,13 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Delete All Data</button>
+                        
                         <button type="submit" class="btn btn-secondary" data-dismiss="modal">Submit</button>
                     </div>
                 </div>
                 </div>
             </div>
-
+            
             <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel3" aria-hidden="true">
                 <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
@@ -181,37 +187,38 @@
                     </div>
                     <div class="modal-body">
                         <h2>College</h2>
-                        <input type="text" name="school" placeholder="Name of School">
-                        <input type="text" name="gradyear" placeholder="Year Graduated">
-                        <input type="text" name="degreeInfo" placeholder="Degree Information">
+                        <input type="text" name="school"  value="{{user.school}}"   placeholder="Name of School">
+                        <input type="text" name="gradyear" value="{{user.gradyear}}"   placeholder="Year Graduated">
+                        <input type="text" name="degreeDesc" value="{{user.degreeDesc}}" placeholder="Degree Information">
 
                         <h2>SHS</h2>
-                        <input type="text" name="school2" placeholder="Name of School">
-                        <input type="text" name="gradyear2" placeholder="Year Graduated">
-                        <input type="text" name="degreeInfo2" placeholder="Degree Information">
+                        <input type="text" name="degree2" value="{{user.degree2}}"   placeholder="Course">
+                        <input type="text" name="school2" value="{{user.school2}}"   placeholder="Name of School">
+                        <input type="text" name="gradyear2" value="{{user.gradyear2}}"   placeholder="Year Graduated">
+                        <input type="text" name="degreeDesc2" value="{{user.degreeDesc2}}"   placeholder="Degree Information">
 
                         <h2>Professional Experience</h2>
-                        <input type="text" name="jobtitle" placeholder="Job Title">
-                        <input type="text" name="jobyear" placeholder="Job Year">
-                        <input type="text" name="companyname" placeholder="Company Name">
-                        <input type="text" name="JobDescri1" placeholder="Job Description 1">
-                        <input type="text" name="JobDescri2" placeholder="Job Description 2">
-                        <input type="text" name="JobDescri3" placeholder="Job Description 3">
-                        <input type="text" name="JobDescri4" placeholder="Job Description 4">
+                        <input type="text" name="jobtitle" value="{{user.jobtitle}}"   placeholder="Job Title">
+                        <input type="text" name="jobyear" value="{{user.jobyear}}"   placeholder="Job Year">
+                        <input type="text" name="companyname" value="{{user.companyname}}"   placeholder="Company Name">
+                        <input type="text" name="JobDescri1" value="{{user.JobDescri1}}"   placeholder="Job Description 1">
+                        <input type="text" name="JobDescri2" value="{{user.JobDescri2}}"   placeholder="Job Description 2">
+                        <input type="text" name="JobDescri3" value="{{user.JobDescri3}}"   placeholder="Job Description 3">
+                        <input type="text" name="JobDescri4" value="{{user.JobDescri4}}"   placeholder="Job Description 4">
 
                         <h2>School Experience</h2>
-                        <input type="text" name="roletitle" placeholder="Job Title">
-                        <input type="text" name="roleyear" placeholder="Job Year">
-                        <input type="text" name="ojtcompanyname" placeholder="Company Name">
-                        <input type="text" name="roleDescri1" placeholder="Job Description 1">
-                        <input type="text" name="roleDescri2" placeholder="Job Description 2">
-                        <input type="text" name="roleDescri3" placeholder="Job Description 3">
-                        <input type="text" name="roleDescri4" placeholder="Job Description 4">
+                        <input type="text" name="roletitle" value="{{user.roletitle}}"   placeholder="Job Title">
+                        <input type="text" name="roleyear" value="{{user.roleyear}}"   placeholder="Job Year">
+                        <input type="text" name="ojtcompanyname" value="{{user.ojtcompanyname}}"   placeholder="Company Name">
+                        <input type="text" name="roleDescri1" value="{{user.roleDescri1}}"   placeholder="Job Description 1">
+                        <input type="text" name="roleDescri2" value="{{user.roleDescri2}}"   placeholder="Job Description 2">
+                        <input type="text" name="roleDescri3" value="{{user.roleDescri3}}"   placeholder="Job Description 3">
+                        <input type="text" name="roleDescri4" value="{{user.roleDescri4}}"   placeholder="Job Description 4">
                     </div>
                     
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Delete All Data</button>
+                        
                         <button type="submit" class="btn btn-secondary" data-dismiss="modal">Submit</button>
                     </div>
 
@@ -220,25 +227,7 @@
                 </div>
             </div>
 
-            <div class="modal fade" id="exampleModal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel4" aria-hidden="true">
-                <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel4">Modal 4</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    </div>
-                    <div class="modal-body">
-                    Content for Modal 4.
-                    </div>
-                    <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
-                </div>
-                </div>
-            </div>
+            
             <button type="submit" class="btn btn-secondary" data-dismiss="modal">Save changes</button>
         </form>
         
